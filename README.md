@@ -1,8 +1,6 @@
-<details><summary>Appsynth Fullstack Assignment </summary>
+<details><summary>Fullstack Assignment </summary>
 
-## (04/05/22)
-## Confidental
-Please don't disclose this assignment with anyone. 
+
 
 ## Story and Goals
 We plan to launch an URL Shortener service live. Your responsibility is to built the project from scratch and make sure the structure is flexible, easy to understand and easy to be supported by your team members. Since we are making a high-quality application, we should handle errors and logging properly.
