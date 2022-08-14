@@ -1,0 +1,4 @@
+ShortenUrl.code-workspace
+node_modules
+.env
+doctl.exe

@@ -1,0 +1,24 @@
+name: deploy-shortenurl
+on:
+  workflow_dispatch:
+    push:
+      branches:
+        - main
+      paths:
+        - 'shortenurl/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        env:
+          DOCKER_USERNAME: 'silkflo'
+          DOCKER_PASSWORD: 'Appsynth1234;'
+      - run: cd shortenurl && docker build -t silkflo/shortenurl .
+      - run: docker push silkflo/shortenurl
+      - uses: digitalocean/action-doctl@v2
+        with:
+          token: dop_v1_107844fb7f337df0fd2b225cd3c2d4ad41feb7d2258f19e6b5478c3579fc8667
+      - run: doctl kubernetes cluster kubeconfig save shorten-url
+      - run: kubectl rollout restart deployment shortenurl-depl

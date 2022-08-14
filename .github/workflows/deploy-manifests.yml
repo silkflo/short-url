@@ -1,0 +1,19 @@
+name: deploy-manifests
+
+on:
+  workflow_dispatch:
+    push:
+      branches:
+        - main
+      paths:
+        - 'infra/**'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: digitalocean/action-doctl@v2
+        with:
+          token: 'dop_v1_107844fb7f337df0fd2b225cd3c2d4ad41feb7d2258f19e6b5478c3579fc8667'
+      - run: doctl kubernetes cluster kubeconfig save shorten-url
+      - run: kubectl apply -f infra/k8s && kubectl apply -f infra/k8s-prod

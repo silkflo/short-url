@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "e5959c07-6ea4-4868-b7e9-9adfce176297",
+		"name": "SHORTEN URL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15160775"
+	},
+	"item": [
+		{
+			"name": "POST URL",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cache-Control",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Porfolio\",\r\n    \"description\":\"Florian portfolio\",\r\n    \"longUrl\":\"https://flo-portfolio.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://appsynth.dev/shorten",
+					"protocol": "https",
+					"host": [
+						"appsynth",
+						"dev"
+					],
+					"path": [
+						"shorten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LIST URL",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"accept-encoding": true,
+					"accept": true
+				},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://appsynth.dev/shorten",
+					"protocol": "https",
+					"host": [
+						"appsynth",
+						"dev"
+					],
+					"path": [
+						"shorten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET URL",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept-encoding": true,
+					"connection": true
+				},
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://appsynth.dev/shorten/zqqzsqz",
+					"protocol": "https",
+					"host": [
+						"appsynth",
+						"dev"
+					],
+					"path": [
+						"shorten",
+						"zqqzsqz"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
